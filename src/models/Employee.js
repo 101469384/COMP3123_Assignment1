@@ -8,7 +8,8 @@ const EmployeeSchema = new Schema(
         position:        { type: String, required: true, trim: true },
         salary:          { type: Number, required: true, min: 0 },
         date_of_joining: { type: Date,   required: true },
-        department:      { type: String, required: true, trim: true }
+        department:      { type: String, required: true, trim: true },
+        profile_image: { type: String, default: null }
     },
     {
         timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },

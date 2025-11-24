@@ -13,7 +13,11 @@ const createEmployeeRules = [
 const updateEmployeeRules = [
     param('eid').isMongoId().withMessage('valid eid is required in path'),
     body().custom(b => {
-        const allowed = ['first_name','last_name','email','position','salary','date_of_joining','department'];
+        const allowed = [
+            "first_name","last_name","email","position",
+            "salary","date_of_joining","department",
+            "profile_image"
+        ];
         const keys = Object.keys(b);
         if (keys.length === 0) throw new Error('provide at least one field to update');
         for (const k of keys) if (!allowed.includes(k)) throw new Error(`invalid field: ${k}`);
